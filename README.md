@@ -1,3 +1,3 @@
-# Vineyard Minotaur
+# Vineyard Data
 
-Monitors blockchains using the Vineyard Blockchain Protocol
+Abstract data access protocol
