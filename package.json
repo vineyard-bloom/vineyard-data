@@ -1,6 +1,6 @@
 {
   "name": "vineyard-data",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.1",
   "description": "Abstract data access protocol",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -10,8 +10,6 @@
   "repository": "git@github.com:vineyard-bloom/vineyard-data.git",
   "author": "",
   "license": "MIT",
-  "dependencies": {
-  },
-  "devDependencies": {
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
