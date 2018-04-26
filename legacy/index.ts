@@ -255,3 +255,14 @@ export interface Modeler {
 
   getLegacyDatabaseInterface(): any
 }
+
+export interface Operation {
+  type: Operation_Type
+  item?: any
+}
+
+export enum Operation_Type {
+  add,
+  clear,
+  remove
+}
