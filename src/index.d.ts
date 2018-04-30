@@ -8,7 +8,7 @@ export declare type CreateSeed<T, DbPopulatedFields extends keyof T, ForeignKeyA
 export declare type UpdateSeed<T, ForeignKeyArrayFields extends keyof T> = {
     [k in ForeignKeyArrayFields]?: Operation[];
 } & Partial<Omit<T, ForeignKeyArrayFields>>;
-export interface StrictCollection<T, DbPopulatedFields extends keyof T = NoKeys, ForeignKeyArrayFields extends keyof T = NoKeys> {
+export interface StrictCollection<T, DbPopulatedFields extends keyof T, ForeignKeyArrayFields extends keyof T> {
     getTrellis(): CollectionTrellis<T>;
     getTableClient(): void;
     create(seed: CreateSeed<T, DbPopulatedFields, ForeignKeyArrayFields>): Promise<T>;
@@ -18,6 +18,6 @@ export interface StrictCollection<T, DbPopulatedFields extends keyof T = NoKeys,
     all(): QueryBuilder<T, T[]>;
     filter(options: Partial<T>): QueryBuilder<T, T[]>;
     first(options?: Partial<T>): QueryBuilder<T, T | undefined>;
-    get(identity: any): any;
+    get(identity: QuerySeed<T>): Promise<T>;
 }
 export declare type NoKeys = never;
