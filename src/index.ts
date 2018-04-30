@@ -10,7 +10,7 @@ export type UpdateSeed<T, ForeignKeyArrayFields extends keyof T> =
   { [ k in ForeignKeyArrayFields]?: Operation[] } &
   Partial<Omit<T, ForeignKeyArrayFields>>
 
-export interface StrictCollection<T, DbPopulatedFields extends keyof T = never, ForeignKeyArrayFields extends keyof T = never>{
+export interface StrictCollection<T, DbPopulatedFields extends keyof T, ForeignKeyArrayFields extends keyof T>{
   getTrellis(): CollectionTrellis<T>
 
   getTableClient(): void
@@ -31,3 +31,5 @@ export interface StrictCollection<T, DbPopulatedFields extends keyof T = never, 
 
   get(identity: any): any
 }
+
+export type NoKeys = never
