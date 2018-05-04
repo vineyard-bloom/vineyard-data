@@ -18,6 +18,6 @@ export interface StrictCollection<T, DbPopulatedFields extends keyof T = NoKeys,
     all(): QueryBuilder<T, T[]>;
     filter(options: Partial<T>): QueryBuilder<T, T[]>;
     first(options?: Partial<T>): QueryBuilder<T, T | undefined>;
-    get(identity: QuerySeed<T>): Promise<T>;
+    get(identity: QuerySeed<T>): Promise<T | undefined>;
 }
 export declare type NoKeys = never;
