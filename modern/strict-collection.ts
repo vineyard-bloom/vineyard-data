@@ -1,16 +1,15 @@
-import { Omit, QuerySeed } from "./core-types"
-import { Collection, CollectionTrellis, Operation, QueryBuilder } from "../legacy/index"
+import { CollectionTrellis, Operation, QueryBuilder } from '../legacy/index'
+import { Omit, QuerySeed } from './core-types'
 
 export type CreateSeed<T, DbPopulatedFields extends keyof T, ForeignKeyArrayFields extends keyof T> =
   { [ p in DbPopulatedFields ]?: T[p] } &
   { [ k in ForeignKeyArrayFields]?: Operation[] } &
   Omit<T, ForeignKeyArrayFields | DbPopulatedFields>
-
 export type UpdateSeed<T, ForeignKeyArrayFields extends keyof T> =
   { [ k in ForeignKeyArrayFields]?: Operation[] } &
   Partial<Omit<T, ForeignKeyArrayFields>>
 
-export interface StrictCollection<T, DbPopulatedFields extends keyof T = NoKeys, ForeignKeyArrayFields extends keyof T = NoKeys>{
+export interface StrictCollection<T, DbPopulatedFields extends keyof T = NoKeys, ForeignKeyArrayFields extends keyof T = NoKeys> {
   getTrellis(): CollectionTrellis<T>
 
   getTableClient(): void

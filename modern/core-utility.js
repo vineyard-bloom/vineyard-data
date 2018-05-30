@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /*
   pizzaCollection.get(pizzaId).then(throwIfUndefined)
 
-  or for a more descriptive error message...
+  or for a more descriptive error message including the pizzaId used in the query...
 
   pizzaCollection.get(pizzaId).then(possiblePizza => throwIfUndefined(possiblePizza, pizzaId))
 */

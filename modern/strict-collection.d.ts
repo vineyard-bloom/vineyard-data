@@ -1,5 +1,5 @@
-import { Omit, QuerySeed } from "./core-types";
-import { CollectionTrellis, Operation, QueryBuilder } from "../legacy/index";
+import { CollectionTrellis, Operation, QueryBuilder } from '../legacy/index';
+import { Omit, QuerySeed } from './core-types';
 export declare type CreateSeed<T, DbPopulatedFields extends keyof T, ForeignKeyArrayFields extends keyof T> = {
     [p in DbPopulatedFields]?: T[p];
 } & {
